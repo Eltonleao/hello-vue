@@ -2,19 +2,19 @@
   <h1>Hello {{name}}</h1>
   <div v-text="description"></div>
   <div v-html="html"></div>
-  <span v-bind:class="status" class="teste">Status</span>
-  <h2 v-bind:class="isPromoted && 'promoted'">Promoted</h2>
-  <h2 v-bind:class="isSoldout ? 'soud-out': 'new'">Soudout</h2>
-  <h2 v-bind:class="['new', 'promoted']">Newly promoted Movie</h2>
-  <h2 v-bind:class="['new', isSoldout ? 'soud-out': 'new']">Array Conditional</h2>
-  <h2 v-bind:class="{
+  <span :class="status" class="teste">Status</span>
+  <h2 :class="isPromoted && 'promoted'">Promoted</h2>
+  <h2 :class="isSoldout ? 'soud-out': 'new'">Soudout</h2>
+  <h2 :class="['new', 'promoted']">Newly promoted Movie</h2>
+  <h2 :class="['new', isSoldout ? 'soud-out': 'new']">Array Conditional</h2>
+  <h2 :class="{
     new: isSoldout,
     promoted: isPromoted
   }">Object Class Bind</h2>
 
 
 
-  <h2 v-bind:style="{
+  <h2 :style="{
     color: color,
     fontSize: size,
     border: border
@@ -23,9 +23,9 @@
   </h2>
 
   <header>
-    <h2 v-bind:style="headerStyleObj">Header</h2>
+    <h2 :style="headerStyleObj">Header</h2>
   </header>
-   <p v-bind:style="[successStyleObj, badgeStyleObj]">nsldkfhdaskf</p>
+   <p :style="[successStyleObj, badgeStyleObj]">nsldkfhdaskf</p>
 </template>
 
 <script>
