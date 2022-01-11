@@ -1,13 +1,20 @@
 <template>
-  <h2 v-if="num == 0">The number is zero</h2>
-  <h2 v-else-if="num > 0">The number is positive</h2>
-  <h2 v-else>The number is negative</h2>
+  <h2 v-for="(name, index) in names" v-bind:key="name">{{index}} - {{name}}</h2>
+  
+  <h2 v-for="name in fullNames" v-bind:key="name.first">
+    <span v-if="show">
+      {{name.first}} {{name.last}}
+    </span>
+  </h2>
 
-<template v-if="display">
-  <h2>Lorem</h2>
-  <h2>Ipsum</h2>
-  <h2>Dolor</h2>
-</template>
+  <div v-for="actor in actors" :key="actor.name">
+    <h2>{{actor.name}}</h2>
+    <ul v-for="movie in actor.movies" :key="movie">
+      <li>{{movie}}</li>
+    </ul>
+  </div>
+
+  <h2 v-for="(value, key, index) in myInfo" :key="value">{{index}} - {{key}} : {{value}}</h2>
   
 </template>
 
@@ -17,8 +24,29 @@ export default {
   name: 'App',
   data() {
     return {
-      num : "string",
-      display: false
+      show: false,
+      names: ["lorem", "ipsum", "dolor"],
+      fullNames : [
+        {first: "lorem", last: "ipsum"},
+        {first: "dolor", last: "sit"}
+      ],
+      actors: [
+        {
+          name: "Christian Bale",
+          movies: ['Batman', "çldskjlfd"]
+        },
+        {
+          name: "Di Caprio",
+          movies: ['titanic', 'lkcsjhfdskl']
+        }
+      ],
+      myInfo :{
+        name: "ELton",
+        ksjdf: "kasjhflsa",
+        lskdjf: "lkds"
+      }
+
+      
     }
   }
 }
@@ -32,12 +60,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.promoted{
-  font-style: italic;
-}
-.new{
-  color: green;
 }
 </style>
