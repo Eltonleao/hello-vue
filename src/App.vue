@@ -1,7 +1,7 @@
 <template>
   <h2>{{count}}</h2>
-  <button v-on:click="increment()">add</button>
-  <button v-on:click="decrement()">sub</button>
+  <button @click="increment()">add</button>
+  <button @click="decrement()">sub</button>
 
 </template>
 
