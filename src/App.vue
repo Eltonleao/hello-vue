@@ -1,5 +1,8 @@
 <template>
-<h2>{{add(2,2)}}</h2>
+  <h2>{{count}}</h2>
+  <button v-on:click="increment()">add</button>
+  <button v-on:click="decrement()">sub</button>
+
 </template>
 
 <script>
@@ -7,12 +10,16 @@
 export default {
   data() {
     return {
-      
+      count: 0,
+      name : "Yoda"
     }
   },
   methods:{
-    add(a, b){
-      return a + b;
+    increment(){
+      this.count++;
+    },
+    decrement(){
+      this.count--;
     }
   }
 }
