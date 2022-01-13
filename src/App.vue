@@ -1,7 +1,16 @@
 <template>
-  <h2>{{count}}</h2>
-  <button @click="increment()">add</button>
-  <button @click="decrement()">sub</button>
+  <div>
+    <pre>
+      {{JSON.stringify(form, null, 2)}}
+    </pre>
+
+  </div>
+  <form @submit="handleSubmit($event)">
+    <label for="name">name: </label>
+    <input type="text" id="name" v-model.trim="form.name">
+
+    <input type="submit" value="submit">
+  </form>  
 
 </template>
 
@@ -10,17 +19,17 @@
 export default {
   data() {
     return {
-      count: 0,
-      name : "Yoda"
+      form :{
+        name: ""
+      }
     }
   },
   methods:{
-    increment(){
-      this.count++;
-    },
-    decrement(){
-      this.count--;
+    handleSubmit($event){
+      $event.preventDefault();
+      console.log(this.form.name);
     }
+    
   }
 }
 </script>
