@@ -1,17 +1,7 @@
 <template>
-  <div>
-    <pre>
-      {{JSON.stringify(form, null, 2)}}
-    </pre>
-
-  </div>
-  <form @submit="handleSubmit($event)">
-    <label for="name">name: </label>
-    <input type="text" id="name" v-model.trim="form.name">
-
-    <input type="submit" value="submit">
-  </form>  
-
+<ul>
+  <li v-for="item in computedItems" :key="item">{{item}}</li>
+</ul>
 </template>
 
 <script>
@@ -19,17 +9,17 @@
 export default {
   data() {
     return {
-      form :{
-        name: ""
-      }
+      items : [
+        1,2,3,4,5
+      ]
     }
   },
   methods:{
-    handleSubmit($event){
-      $event.preventDefault();
-      console.log(this.form.name);
+  },
+  computed: {
+    computedItems(){
+      return this.items.filter(item => item > 2 && item < 5);
     }
-    
   }
 }
 </script>
