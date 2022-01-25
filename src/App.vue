@@ -6,6 +6,8 @@
   <button v-on:click="volume += 2 ">Increase</button>
 </div>
 
+<input type="text" v-model="movie">
+
 </template>
 
 <script>
@@ -13,7 +15,8 @@
 export default {
   data() {
     return {
-      volume: 0
+      volume: 0,
+      movie: 'dasds'
     }
   },
   methods:{},
@@ -28,6 +31,12 @@ export default {
       } else if (newVal < 0) {
         this.volume = 0
       }
+    },
+    movie: {
+      handler: function(val){
+        console.log(val);
+      },
+      immediate: true
     }
   },
 }
