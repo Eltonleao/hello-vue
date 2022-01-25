@@ -12,7 +12,11 @@
 export default{
     name: "Article",
     props:{
-        title: String,
+        title: {
+            type: String,
+            required: true,
+            default: "no title"
+        },
         likes: Number,
         published: Boolean
     }

@@ -1,5 +1,5 @@
 <template>
-  <Article title="a" :likes="50" :published="true"></Article>
+  <Article title="salhfslkdj" :likes="50" :published="true"></Article>
 
 </template>
 
