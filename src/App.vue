@@ -1,7 +1,7 @@
 <template>
 
 <template v-for="item in [1,2,3,4,5,6,7,8,9,10]" :key="item">
-  <greet name='lorem' message="lorem ipsum dolor sit amet"></greet>
+  <greet v-bind:name='name' message="lorem ipsum dolor sit amet"></greet>
 </template>
 
 </template>
@@ -13,6 +13,9 @@ import Teste from './Greet.vue';
 
 export default {
   data() {
+    return{
+      name: "Darth Vader"
+    }
   },
   methods:{},
   computed: {},
