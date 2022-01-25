@@ -1,35 +1,26 @@
 <template>
-  <Article title="salhfslkdj" :likes="50" :published="true"></Article>
-
+  <ComponentA></ComponentA>  
 </template>
 
 <script>
 
-import Article from './Article.vue';
-
+import ComponentA from './ComponentA.vue';
 export default {
   data() {
-    return{
-      name: "Darth Vader"
+    return {
+      username: 'John Doe'
     }
   },
   methods:{},
   computed: {},
   watch: {},
   components:{
-
-    Article
+    ComponentA
+  },
+  provide: function(){
+    return {
+      username: this.username
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
