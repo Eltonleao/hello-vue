@@ -1,6 +1,8 @@
 <template>
 <div>
-    <h2>Article</h2>
+    <h2>{{title}}</h2>
+    <p>Likes: {{likes}}</p>
+    <p>{{published ? 'published' : "not published"}}</p>
 </div>
     
 </template>
@@ -9,6 +11,11 @@
 
 export default{
     name: "Article",
+    props:{
+        title: String,
+        likes: Number,
+        published: Boolean
+    }
 
 }
 </script>
