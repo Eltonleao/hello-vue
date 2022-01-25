@@ -1,5 +1,8 @@
 <template>
-<h3>Hello Components</h3>
+<h3>Hello {{name}}</h3>
+<p>sua mensagem</p>
+<p>{{message}}</p>
+
 </template>
 
 <script>
@@ -10,6 +13,7 @@ export default {
   methods:{},
   computed: {},
   watch: {},
+  props: ['name', 'message'],
 }
 </script>
 

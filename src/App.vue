@@ -1,12 +1,15 @@
 <template>
-<Greet></Greet>
-<myComponent></myComponent>
+
+<template v-for="item in [1,2,3,4,5,6,7,8,9,10]" :key="item">
+  <greet name='lorem' message="lorem ipsum dolor sit amet"></greet>
+</template>
+
 </template>
 
 <script>
 
 import Teste from './Greet.vue';
-import MyComponent from './MyComponent.vue';
+// import MyComponent from './MyComponent.vue';
 
 export default {
   data() {
@@ -15,8 +18,8 @@ export default {
   computed: {},
   watch: {},
   components:{
-    Greet: Teste,
-    MyComponent: MyComponent
+    Greet: Teste
+    // MyComponent: MyComponent
   }
 }
 </script>
