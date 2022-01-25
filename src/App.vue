@@ -1,10 +1,12 @@
 <template>
 <Greet></Greet>
+<myComponent></myComponent>
 </template>
 
 <script>
 
 import Teste from './Greet.vue';
+import MyComponent from './MyComponent.vue';
 
 export default {
   data() {
@@ -13,7 +15,8 @@ export default {
   computed: {},
   watch: {},
   components:{
-    Greet: Teste
+    Greet: Teste,
+    MyComponent: MyComponent
   }
 }
 </script>
