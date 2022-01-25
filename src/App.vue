@@ -1,7 +1,11 @@
 <template>
-<ul>
-  <li v-for="item in computedItems" :key="item">{{item}}</li>
-</ul>
+<h2>Volume Tracker (0-20)</h2>
+<h3>Current Volume - {{volume}}</h3>
+<div>
+  <button v-on:click="volume -= 2 ">Decrease</button>
+  <button v-on:click="volume += 2 ">Increase</button>
+</div>
+
 </template>
 
 <script>
@@ -9,18 +13,23 @@
 export default {
   data() {
     return {
-      items : [
-        1,2,3,4,5
-      ]
+      volume: 0
     }
   },
-  methods:{
-  },
-  computed: {
-    computedItems(){
-      return this.items.filter(item => item > 2 && item < 5);
+  methods:{},
+  computed: {},
+  watch: {
+    volume: function(newVal, oldVal) {
+    console.log("🚀 ~ file: App.vue ~ line 23 ~ oldVal", oldVal)
+    console.log("🚀 ~ file: App.vue ~ line 23 ~ newVal", newVal)
+      if (newVal > 60) {
+        alert("Quer ficar surdo mlk?");
+        this.volume = 60;
+      } else if (newVal < 0) {
+        this.volume = 0
+      }
     }
-  }
+  },
 }
 </script>
 
