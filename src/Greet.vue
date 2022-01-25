@@ -1,20 +1,15 @@
 <template>
-<Greet></Greet>
+<h3>Hello Components</h3>
 </template>
 
 <script>
 
-import Teste from './Greet.vue';
-
 export default {
-  data() {
-  },
+  name: "Teste",
+  data() {},
   methods:{},
   computed: {},
   watch: {},
-  components:{
-    Greet: Teste
-  }
 }
 </script>
 
