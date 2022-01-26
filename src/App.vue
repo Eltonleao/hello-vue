@@ -1,5 +1,5 @@
 <template>
-  <popup v-show="show" @close="show = false"></popup>
+  <popup v-show="show" @close="handleClose"></popup>
   <button v-show="!show" @click="show = true">show</button>
 </template>
 
@@ -12,7 +12,12 @@ export default {
       show: false
     }
   },
-  methods:{},
+  methods:{
+    handleClose(msg){
+      alert(msg);
+      return this.show = false;
+    }
+  },
   computed: {},
   watch: {},
   components:{

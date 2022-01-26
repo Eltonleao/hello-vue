@@ -1,7 +1,7 @@
 <template>
     <div id="popup">
         <h2>This is a popup</h2>
-        <a @click="$emit('close')"> close</a>
+        <a @click="$emit('close', 'my data')"> close</a>
     </div>
 </template>
 
