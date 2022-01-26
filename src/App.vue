@@ -1,26 +1,30 @@
 <template>
-  <ComponentA></ComponentA>  
+  <popup v-show="show" @close="show = false"></popup>
+  <button v-show="!show" @click="show = true">show</button>
 </template>
 
 <script>
+import Popup from './Popup.vue';
 
-import ComponentA from './ComponentA.vue';
 export default {
   data() {
     return {
-      username: 'John Doe'
+      show: false
     }
   },
   methods:{},
   computed: {},
   watch: {},
   components:{
-    ComponentA
-  },
-  provide: function(){
-    return {
-      username: this.username
-    }
+    Popup
   }
 }
 </script>
+
+
+<style>
+  *{
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+</style>
