@@ -1,28 +1,18 @@
 <template>
-  <popup v-show="show" @close="handleClose"></popup>
-  <button v-show="!show" @click="show = true">show</button>
+  <Input></Input>
 </template>
 
 <script>
-import Popup from './Popup.vue';
+
+import Input from './Input.vue'
 
 export default {
-  data() {
-    return {
-      show: false
-    }
-  },
   methods:{
-    handleClose(msg){
-      alert(msg);
-      console.log(msg);
-      return this.show = false;
-    }
   },
   computed: {},
   watch: {},
   components:{
-    Popup
+    Input
   }
 }
 </script>
