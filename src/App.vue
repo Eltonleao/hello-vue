@@ -15,6 +15,7 @@ export default {
   methods:{
     handleClose(msg){
       alert(msg);
+      console.log(msg);
       return this.show = false;
     }
   },

@@ -1,14 +1,24 @@
 <template>
     <div id="popup">
-        <h2>This is a popup</h2>
-        <a @click="$emit('close', 'my data')"> close</a>
+        <h2>This is a popup{{name}}</h2>
+        <input type="text" v-model="name">
+        <a @click="$emit('close', name)"> close</a>
     </div>
 </template>
 
 <script>
 export default{
     name: "Popup",
-    emits: ['close']
+    emits: {
+        close: (name) =>{
+            return !!name;
+        }
+    },
+    data(){
+        return{
+            name: ""
+        }
+    }
 }
 </script>
 
