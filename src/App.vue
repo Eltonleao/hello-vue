@@ -1,8 +1,17 @@
 <template>
-  <Card></Card>
-  <Card>lorem ipsum dolor sit amet</Card>
-  <Card><h1>Hello World</h1></Card>
-  <Card><img src="https://picsum.photos/500/100" alt="" srcset=""></Card>
+  <Card>
+    <template v-slot:header>
+      <h3>Header</h3>
+    </template>
+    <template v-slot:default>
+      <img src="https://picsum.photos/200" >
+    </template>
+
+    <template v-slot:footer>
+      <h3>Footer</h3>
+    </template>
+  </Card>
+  
 </template>
 
 <script>
