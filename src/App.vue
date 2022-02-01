@@ -1,10 +1,13 @@
 <template>
-  <Input></Input>
+  <Card></Card>
+  <Card>lorem ipsum dolor sit amet</Card>
+  <Card><h1>Hello World</h1></Card>
+  <Card><img src="https://picsum.photos/500/100" alt="" srcset=""></Card>
 </template>
 
 <script>
 
-import Input from './Input.vue'
+import Card from "./components/Card.vue";
 
 export default {
   methods:{
@@ -12,7 +15,7 @@ export default {
   computed: {},
   watch: {},
   components:{
-    Input
+    Card
   }
 }
 </script>
