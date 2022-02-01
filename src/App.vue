@@ -1,22 +1,14 @@
 <template>
-  <Card>
-    <template v-slot:header>
-      <h3>Header</h3>
+  <name-list>
+    <template v-slot:default="slotProps">
+      {{slotProps.lastName}}, {{slotProps.firstName}}
     </template>
-    <template v-slot:default>
-      <img src="https://picsum.photos/200" >
-    </template>
-
-    <template v-slot:footer>
-      <h3>Footer</h3>
-    </template>
-  </Card>
-  
+  </name-list>
 </template>
 
 <script>
 
-import Card from "./components/Card.vue";
+import NameList from "./components/NameList.vue";
 
 export default {
   methods:{
@@ -24,7 +16,7 @@ export default {
   computed: {},
   watch: {},
   components:{
-    Card
+    NameList
   }
 }
 </script>
@@ -33,6 +25,7 @@ export default {
 <style>
   *{
     font-family: 'Courier New', Courier, monospace;
+    text-align: center;
   }
 
 </style>
