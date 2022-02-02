@@ -3,9 +3,10 @@
   <button @click="active = 'TabB'">TabB</button>
   <button @click="active = 'TabC'">TabC</button>
 
-  <tab-a v-if="active == 'TabA'"></tab-a>
+  <component :is="active"/>
+  <!-- <tab-a v-if="active == 'TabA'"></tab-a>
   <tab-b v-if="active == 'TabB'"></tab-b>
-  <tab-c v-if="active == 'TabC'"></tab-c>
+  <tab-c v-if="active == 'TabC'"></tab-c> -->
 </template>
 
 <script>
