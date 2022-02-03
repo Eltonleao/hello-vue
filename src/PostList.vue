@@ -1,5 +1,5 @@
 <template>
-  <button @click="getPosts">Load Posts</button>
+  
   <h3 v-if="errorMsg">{{errorMsg}}</h3>
   <div v-for="post in posts" :key="post.id">
       <h3>{{post.title}}</h3>
@@ -13,6 +13,9 @@ import axios from 'axios';
 
 export default {
     name: "PostList",
+    created(){
+        this.getPosts();
+    },
     data(){
         return{
             posts: [],
@@ -22,7 +25,6 @@ export default {
     methods: {
         getPosts(){
             this.loading = true;
-            console.log('lksajh');
             axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(response => {
                 this.posts = response.data;
