@@ -1,12 +1,10 @@
 <template>
-
-  <PostList></PostList>
-
+  <TemplateRef></TemplateRef>
 </template>
 
 <script>
 
-import PostList  from "./PostList.vue";
+import TemplateRef from "./components/TemplateRef.vue";
 
 export default {
   data(){
@@ -19,7 +17,7 @@ export default {
   computed: {},
   watch: {},
   components:{
-    PostList
+    TemplateRef
   }
 }
 </script>
