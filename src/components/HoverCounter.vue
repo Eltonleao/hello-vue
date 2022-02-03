@@ -5,18 +5,12 @@
 </template>
 
 <script>
+
+import mixin from '../mixins/counter.js';
+
 export default {
     name: "HoverCounter",
-    data(){
-        return{
-            count: 0
-        }
-    },
-    methods:{
-        incrementCount(){
-            this.count++;
-        }
-    }
+    mixins: [mixin]
 
 }
 </script>
