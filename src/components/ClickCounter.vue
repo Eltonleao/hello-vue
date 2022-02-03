@@ -10,6 +10,11 @@ import mixin from '../mixins/counter.js';
 
 export default {
     name: "ClickCounter",
+    data(){
+        return {
+            count: 42
+        }
+    },
     mixins: [mixin]
 
 }
