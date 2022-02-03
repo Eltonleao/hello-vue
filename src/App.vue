@@ -1,10 +1,12 @@
 <template>
-  <TemplateRef></TemplateRef>
+  <HoverCounter></HoverCounter>
+  <ClickCounter></ClickCounter>
 </template>
 
 <script>
 
-import TemplateRef from "./components/TemplateRef.vue";
+import ClickCounter from "./components/ClickCounter.vue";
+import HoverCounter from "./components/HoverCounter.vue";
 
 export default {
   data(){
@@ -17,7 +19,8 @@ export default {
   computed: {},
   watch: {},
   components:{
-    TemplateRef
+    ClickCounter,
+    HoverCounter
   }
 }
 </script>
