@@ -1,25 +1,17 @@
 <template>
-  <button @click="active = 'TabA'">TabA</button>
-  <button @click="active = 'TabB'">TabB</button>
-  <button @click="active = 'TabC'">TabC</button>
 
-  <keep-alive>
-    <component :is="active"/>
-  </keep-alive>
-  <!-- <tab-a v-if="active == 'TabA'"></tab-a>
-  <tab-b v-if="active == 'TabB'"></tab-b>
-  <tab-c v-if="active == 'TabC'"></tab-c> -->
+  <PostList></PostList>
+
 </template>
 
 <script>
-import TabA from './components/tabs/TabA.vue';
-import TabB from './components/tabs/TabB.vue';
-import TabC from './components/tabs/TabC.vue';
+
+import PostList  from "./PostList.vue";
 
 export default {
   data(){
     return{
-      active: "TabA"
+      
     }
   },
   methods:{
@@ -27,9 +19,7 @@ export default {
   computed: {},
   watch: {},
   components:{
-    TabA,
-    TabB,
-    TabC
+    PostList
   }
 }
 </script>
