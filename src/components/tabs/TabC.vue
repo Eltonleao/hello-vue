@@ -2,11 +2,19 @@
 <div>
     C
 </div>
+<div>
+    <input type="text" v-model="name">
+</div>
 </template>
 
 <script>
 export default {
-    name: "TabC"
+    name: "TabC",
+    data() {
+        return {
+            name: ""
+        }
+    }
 }
 </script>
 
